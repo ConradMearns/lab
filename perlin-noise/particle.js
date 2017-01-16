@@ -1,6 +1,6 @@
 function Particle(){
   this.pos = createVector(random(width), random(height));
-  this.vel = createVector(0, 0);
+  this.vel = p5.Vector.random2D();
   this.acc = createVector(0, 0);
   this.maxspeed = 4;
 
@@ -26,7 +26,7 @@ function Particle(){
   }
 
   this.show = function(){
-    stroke(0, 5);
+    stroke(255, 5);
     strokeWeight(1);
     line(this.pos.x, this.pos.y, this.prevPos.x, this.prevPos.y);
     // point(this.pos.x, this.pos.y);
