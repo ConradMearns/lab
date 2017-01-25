@@ -1,54 +1,31 @@
-function Boid(x, y){
-  totalSpawns++;
+function Bit(x, y){
   this.pos = createVector(x, y);
   this.vel = createVector(0, 0);
   this.acc = createVector(0, 0);
 
-  this.size = 8;
-  this.energy = 5;
-
-  this.module = undefined;
+  this.size = 2;
+  this.color = createVector(255, 255, 255);
 
   this.update = function(friction){
     var f = this.vel.copy();
     f.mult(-1);
     f.normalize();
     f.mult(friction);
-    this.acc.add(f);
+    this.applyForce(f);
 
     this.vel.add(this.acc);
-    // this.vel.limit(20);
+    // this.vel.limit(10);
     this.pos.add(this.vel);
     this.acc.mult(0);
-
-    if(this.module == undefined){
-      this.applyForce(p5.Vector.random2D());
-    }else{
-      this.module.pos = this.pos;
-      this.module.moduleCode(this);
-    }
   }
-
   this.applyForce = function(force){
-    this.energy -= force.mag()/500;
-    if(this.energy <= 0){
-      this.energy = 0;
-      console.log("DEATH");
-      if(this.module != undefined){
-        this.module.success = true;
-      }
-    }else{
-      this.acc.add(force);
-    }
+    this.acc.add(force);
   }
 
   this.show = function(){
-    stroke(255);
     strokeWeight(this.size);
+    stroke(this.color.x, this.color.y, this.color.z);
     point(this.pos.x, this.pos.y);
-    if(this.module != undefined){
-      this.module.show();
-    }
   }
 
   this.edges = function(){
@@ -69,4 +46,5 @@ function Boid(x, y){
       this.applyForce(force);
     }
   }
+
 }
