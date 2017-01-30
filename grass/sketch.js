@@ -10,6 +10,7 @@ function draw() {
   background(51);
 
   rotateX(frameCount * 0.01);
+  scale(20);
   model(grass);
 
 }
