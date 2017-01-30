@@ -3,7 +3,7 @@ var grass;
 function setup() {
   createCanvas(500, 500, WEBGL);
 
-  grass = loadModel('obj/tree.obj');
+  grass = loadModel('obj/grass.obj');
 }
 
 function draw() {
