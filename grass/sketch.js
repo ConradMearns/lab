@@ -8,11 +8,14 @@ var test = 1;
 
 var sun1, sun2;
 
-function setup() {
-  createCanvas(500, 500, WEBGL);
+function preload(){
   tree = loadModel('http://conrads.website/p5-sketches/grass/obj/tree.obj');
   rock = loadModel('http://conrads.website/p5-sketches/grass/obj/Rock_1.obj');
   grass = loadModel('http://conrads.website/p5-sketches/grass/obj/grass.obj');
+}
+
+function setup() {
+  createCanvas(500, 500, WEBGL);
 
 
   var fov = 60 / 180 * PI;
@@ -21,9 +24,8 @@ function setup() {
 
   sun1 = color(204, 102, 0);
   sun2 = color(0, 102, 153);
-  var gradient = undefined;
+  gradient = undefined;
 
-  var water = loadImage('http://conrads.website/p5-sketches/grass/img/water1.gif');
 }
 
 function draw() {
@@ -36,15 +38,11 @@ function draw() {
   camera(-100, -30, -50);
   directionalLight(250, 250, 250, -light_intensity, light_intensity, light_intensity);
 
-  //Water
-  push();
-  texture(water);
-  plane(100,100);
-  pop();
-
   //Island
   scale(30);
   rotateY(PI);
+  rotateZ(-sin(frameCount*0.01 + PI)/(PI*8));
+  translate(0, cos(frameCount*0.01)/4, 0);
   push();
     push();
       translate(1, 0, 2);
@@ -64,6 +62,18 @@ function draw() {
 
     push();
       translate(0, 2, 0);
+      scale(0.6);
+      ambientMaterial(109, 135, 100);
+      model(grass);
+    pop();
+    push();
+      translate(1, 2, 0);
+      scale(0.6);
+      ambientMaterial(109, 135, 100);
+      model(grass);
+    pop();
+    push();
+      translate(0, 2, 3);
       scale(0.6);
       ambientMaterial(109, 135, 100);
       model(grass);
