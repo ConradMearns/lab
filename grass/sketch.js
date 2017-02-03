@@ -21,21 +21,28 @@ function setup() {
 
   sun1 = color(204, 102, 0);
   sun2 = color(0, 102, 153);
-  gradient = undefined;
+  var gradient = undefined;
+
+  var water = loadImage('http://conrads.website/p5-sketches/grass/img/water1.gif');
 }
 
 function draw() {
   background(51);
 
+  //background
   setGradient(sun1, sun2);
 
-  // var yes = sin(frameCount * 0.1) * 400;
+  // orbitControl();
   camera(-100, -30, -50);
-
-  orbitControl();
-
   directionalLight(250, 250, 250, -light_intensity, light_intensity, light_intensity);
 
+  //Water
+  push();
+  texture(water);
+  plane(100,100);
+  pop();
+
+  //Island
   scale(30);
   rotateY(PI);
   push();
@@ -83,8 +90,9 @@ function createGradient(c1, c2){
   img = createImage(width, height);
   img.loadPixels();
   for (i = 0; i < img.width; i++) {
+    var shift = sin(map(i, 0, height, 0, PI)) * 20;
     for (j = 0; j < img.height; j++) {
-      var nc = lerpColor(c1, c2, t*(j+1));
+      var nc = lerpColor(c1, c2, t*(j+1-shift));
       nc = lerpColor(nc, color(0,0,0), 0.89);
       // var nc = c1;
       img.set(i, j, nc);
@@ -100,8 +108,9 @@ function setGradient(c1, c2) {
     gradient = createGradient(c1, c2);
   }
   texture(gradient);
-  translate(0, cos(frameCount*0.005)*100, -400);
+  // translate(0, 0, -2000);
+  translate(0, cos(frameCount*0.005)*100 - 200, -600);
   rotateZ(PI/8);
-  plane(width*5, height*5);
+  plane(width*4, height*4);
   pop();
 }
