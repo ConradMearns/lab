@@ -9,9 +9,9 @@ var test = 1;
 var sun1, sun2;
 
 function preload(){
-  tree = loadModel('http://conrads.website/p5-sketches/grass/obj/tree.obj');
-  rock = loadModel('http://conrads.website/p5-sketches/grass/obj/Rock_1.obj');
-  grass = loadModel('http://conrads.website/p5-sketches/grass/obj/grass.obj');
+  tree = loadModel('obj/tree.obj');
+  rock = loadModel('obj/Rock_1.obj');
+  grass = loadModel('obj/grass.obj');
 }
 
 function setup() {
