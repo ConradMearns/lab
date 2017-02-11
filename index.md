@@ -9,5 +9,7 @@ A composition of p5 sketches with inspiration from [The Coding Train](https://ww
   + A fun simulation to watch, can you figure out what the colored orbs do?
 + [Floating Island](grass)
   + Intended to become a composition of poetry and a 3D scene, but p5 is too limited. A final version may be created with three.js in the future.
-+  [Points and Lines](points-2d)
++ [Points and Lines](points-2d)
   + Creating visuals similarly found in video games and other contemporary science fictions.
++ [Glitch](glitch)
+  + Playground for adding vaporwave / glitch effects to visuals and DOM elements 
