@@ -1,4 +1,4 @@
-var pixoff = 6;
+var pixoff = 12;
 var img;
 
 var test = 128;
