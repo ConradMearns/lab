@@ -11,7 +11,7 @@ function setup(){
 }
 
 function draw(){
-  background(200);
+  background(255);
   // rotateZ(radians(rotationZ));
   // rotateX(radians(rotationX));
   // rotateY(radians(rotationY));
@@ -24,7 +24,7 @@ function draw(){
   var y = 40;
   var sizex = img.width;
   var sizey = img.height;
-  
+
   // strokeWeight(2);
   // stroke(color(255, 255, 255));
   // fill(color(255, 255, 255));
