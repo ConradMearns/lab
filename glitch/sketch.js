@@ -24,6 +24,13 @@ function draw(){
   var y = 40;
   var sizex = img.width;
   var sizey = img.height;
+  
+  // strokeWeight(2);
+  // stroke(color(255, 255, 255));
+  // fill(color(255, 255, 255));
+  // rect(x, y, sizex, sizey);
+  tint(255, 255, 255, 128);
+  image(img, x, y);
 
   // stroke('red');
   // rect(x-cosoff(rotationX), y-sinoff(rotationX), sizex, sizey);
@@ -34,13 +41,6 @@ function draw(){
   // rect(x-cosoff(rotationY), y-sinoff(rotationY), sizex, sizey);
   tint(0,255,255, 128);
   image(img, x+cosoff(rotationY), y+sinoff(rotationY));
-
-  // strokeWeight(2);
-  // stroke(color(255, 255, 255));
-  // fill(color(255, 255, 255));
-  // rect(x, y, sizex, sizey);
-  tint(255, 255, 255, 128);
-  image(img, x, y);
 }
 
 function cosoff(rotation){
