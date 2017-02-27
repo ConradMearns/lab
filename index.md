@@ -15,7 +15,7 @@ Check out [The Coding Train](https://www.youtube.com/channel/UCvjgXvBlbQiydffZU7
   + Playground for adding vaporwave / glitch effects to visuals and DOM elements
 
 # Further Questions and Challenges
-+ Can you create a pi indexing function, p, such that p(i) = the numeric value of of pi, who's position was that many digits away from the ones place (i for this index)? The function should be able to calculate this value for any index. For example, pi = 3.1415926... so p(0) = 3, p(3) = 1, p(5) = 9, p(3424732432) = ???
-+ Cryptography with multiple decrypting methods and encrypting methods capable of being solved with a stolen private key, rencrypted but distorted as a backup plan to stolen keys
++ An n-th digit formula for Pi. [pindex](pindex)
 + An assembly program that uses a function to generate more code as time progresses. [insint](insint)
++ Cryptography with multiple decrypting methods and encrypting methods capable of being solved with a stolen private key, rencrypted but distorted as a backup plan to stolen keys
 + Create a program that takes an image and makes a single sine wave period that represents that image. Then make a robot (program) that can identify images, recognize trigger objects (like a ball or food) and encode them as that sine wave, and play the sine wave continually to generate a single tone. Another robot can hear, decode, and visually process the same image in order for group dynamic to function
